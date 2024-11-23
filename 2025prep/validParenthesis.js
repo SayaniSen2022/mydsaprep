@@ -1,6 +1,6 @@
 //leet20
 
-let s = "()";
+let s = "()[](())";
 
 var isValid = function (s) {
   let stack = [];
