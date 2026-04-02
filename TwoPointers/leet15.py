@@ -7,11 +7,13 @@ class Solution:
     nums.sort()
 
     for i, a in enumerate(nums):
-      if i > 0 and a == nums[i-1]: # checking for duplicates
+      if a > 0:
+        break
+      if i > 0 and a == nums[i - 1]: # checking for duplicates
         continue
 
       # two sum II
-      l, r = i+1, len(nums)-1
+      l, r = i + 1, len(nums) - 1
       while l < r:
         three_sum = a + nums[l] + nums[r]
         if three_sum > 0:
@@ -20,9 +22,16 @@ class Solution:
           l+=1
         else:
           res.append([a, nums[l], nums[r]])
-          # shifting one pointer does the job
           l+=1
+          r-=1
           # checking if its the same value for removing duplictes
           while nums[l] == nums[l-1] and l < r:
-            continue
+            l+=1
     return res
+
+# run  
+if __name__ == "__main__":
+  sol = Solution()
+  input_list = [-1,0,1,2,-1,-4]
+
+  print(sol.threeSum(input_list))
