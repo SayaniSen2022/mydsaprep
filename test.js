@@ -1,8 +1,12 @@
-const arr = [-1, -2, 3, 4];
+// closure
 
-function test(arr) {
-  arr.sort((a, b) => a - b);
-
-  return typeof arr;
+function init(){
+  let name = "Sam";
+  function displayName(){
+    console.log(name)
+  }
+  return displayName;
 }
-console.log(test(arr));
+
+const myRes = init()
+myRes()
