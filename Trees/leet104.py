@@ -3,6 +3,7 @@
 # path from the root node down to the farthest leaf node.
 
 from collections import deque
+from typing import Optional
 
 class TreeNode:
   def __init__(self, val=0, left=None, right=None):

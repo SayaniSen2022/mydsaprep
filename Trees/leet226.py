@@ -1,6 +1,10 @@
 # Invert Binary Tree - You are given the root of a binary tree 'root'. Invert the binary tree and return its root.
 
 # Definition for a binary Tree Node
+
+
+from typing import Optional
+
 class TreeNode:
   def __init__(self, val=0, left=None, right=None):
       self.val = val
