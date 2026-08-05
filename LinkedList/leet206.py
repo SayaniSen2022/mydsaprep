@@ -9,16 +9,17 @@ class ListNode:
 
 class Solution:
   def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-    #recursion
-    #eliminate the edge cases
+    # iteration
+    # eliminate the edge cases
     if not head:
       return None
-    newHead = head
-    if head.next:
-      newHead = self.reverseList(head.next)
-      head.next.next = head
-    head.next = None
-    return newHead
+    curr, prev = head, None
+    while curr:
+      temp = curr.next
+      curr.next = prev
+      prev = curr
+      curr = temp
+    return prev
 
 def build_linked_list(arr):
     dummy = ListNode(0)
