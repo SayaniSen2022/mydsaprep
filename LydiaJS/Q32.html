@@ -1,0 +1,20 @@
+<!--
+Clicking the paragraph logs -> p div
+By default, event handlers are executed in the bubbling phase, so innermost to outermost elements are logged.
+Event propagation has 3 phases: Capturing, Targeting, Bubbling. If we explicitly set useCapture = true
+then the execution can be stopped from reaching bubbling phase.
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+  </head>
+  <body>
+    <div onclick="console.log('div')">
+      <p onclick="console.log('p')">Click here!</p>
+    </div>
+  </body>
+</html>

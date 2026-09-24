@@ -1,0 +1,29 @@
+<!--
+Lydia Hallie Q31
+What is the target of the event when button is clicked? 
+The deepest nested element that caused the event is the target of the event. 
+Answer: Button. To stop event bubbling -> use event.stopPropagation
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+  </head>
+  <body>
+    <div onclick="console.log('first div')">
+      <div onclick="console.log('second div')">
+        <button
+          onclick="
+            event.stopPropagation();
+            console.log('button');
+          "
+        >
+          Click!
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
